@@ -4,16 +4,26 @@ import Buy from "./buy";
 import Sell from "./sell";
 import Fundings from "./fundings";
 import Results from "./results";
-
+import "./inputs.scss";
 
 function Inputs() {
   return (
-    <div>
-      <Senario />
-      <Buy />
-      <Sell />
-      <Fundings />
-      <Results />
+    <div className="container">
+      <div className="scenario">
+        <Senario />
+      </div>
+      <div className='buy'>
+        <Buy />
+      </div>
+      <div className='sell'>
+        <Sell />
+      </div>
+      <div className='fundings'>
+        <Fundings />
+      </div>
+      <div className='results'>
+        <Results />
+      </div>
     </div>
   )
 }
