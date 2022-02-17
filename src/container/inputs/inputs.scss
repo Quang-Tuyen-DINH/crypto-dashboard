@@ -1,0 +1,30 @@
+.container {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+
+.input {
+  margin: 20px;
+  display: inline-block;
+  width: 330px;
+}
+
+// .scenario {
+// }
+
+.buy {
+  width: 990px !important;
+}
+
+.sell {
+  width: 660px !important;
+}
+
+.fundings {
+  width: 660px !important;
+}
+
+// .results {
+// }

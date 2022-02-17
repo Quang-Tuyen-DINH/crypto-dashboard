@@ -1,0 +1,22 @@
+.buy-container {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title {
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.buy-col {
+  display: inline-block;
+  width: 32%;
+}
+
+.sub-title {
+  margin: 15px 0 0 0;
+  height: 24px;
+  font-weight: bold;
+}

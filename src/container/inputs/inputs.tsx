@@ -9,19 +9,19 @@ import "./inputs.scss";
 function Inputs() {
   return (
     <div className="container">
-      <div className="scenario">
+      <div className="input scenario">
         <Senario />
       </div>
-      <div className='buy'>
+      <div className='input buy'>
         <Buy />
       </div>
-      <div className='sell'>
+      <div className='input sell'>
         <Sell />
       </div>
-      <div className='fundings'>
+      <div className='input fundings'>
         <Fundings />
       </div>
-      <div className='results'>
+      <div className='input results'>
         <Results />
       </div>
     </div>

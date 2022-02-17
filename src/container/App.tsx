@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Inputs from "../components/inputs/inputs"
+import Inputs from "./inputs/inputs"
 
 function App() {
   return (

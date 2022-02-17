@@ -1,0 +1,19 @@
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin: 15px 0 0 0;
+}
+
+.label {
+  text-transform: capitalize;
+  display: inline-block;
+  width: 48%;
+}
+
+.input-field {
+  display: inline-block !important;
+  width: 50% !important;
+}
