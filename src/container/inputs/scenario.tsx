@@ -3,9 +3,17 @@ import "./scenario.scss";
 import InputChild from "../../components/input-child/input-child"
 
 export default function Senario() {
+  const [botname, setBotname] = React.useState("-");
+
+  React.useEffect(() => {
+    fetch('/botname').then(res => res.json()).then(data => {
+      setBotname(data.botname);
+    });
+  }, []);
+
   return (
     <div>
-      <h3 className='title'>scenario</h3>
+      <h3 className='title'>scenario for {botname}</h3>
         <InputChild label="data" type="success" disabled={true} defaultValue="DAILY"/>
         <InputChild label="start date" type="primary" disabled={false} defaultValue=""/>
         <InputChild label="end date" type="primary" disabled={false} defaultValue=""/>
