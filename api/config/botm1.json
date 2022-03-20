@@ -1,0 +1,33 @@
+{
+  "config":{
+    "nb_assets":10,
+    "currency":"BUSD"
+  },
+  "buy_periodic":{
+    "enable":true,
+    "rsi_min": 60
+  },
+  "buy_dip":{
+    "enable":true,
+    "rsi_max": 30,
+    "cool":7,
+    "share_reserve":1,
+    "share_vault":0.33
+  },
+  "sell_take_profit":{
+    "enable":true,
+    "rsi_min": 76.5,
+    "tp_share":0.2,
+    "cool":7
+  },
+  "sell_stop_loss":{
+    "enable":true,
+    "threshold":0.2,
+    "cool":7
+  },
+  "funding": {
+    "enable": true,
+    "dca_funding":10,
+    "period":"monthly"
+  }
+}
