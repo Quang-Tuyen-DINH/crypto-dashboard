@@ -2,13 +2,11 @@ import React from 'react';
 import "./scenario.scss";
 import InputChild from "../../components/input-child/input-child"
 import { useDispatch } from 'react-redux';
+import { Button } from '@mui/material';
 
-export default function Senario() {
+export default function Scenario() {
   React.useEffect(() => {
     fetchData();
-  }, []);
-  React.useEffect(() => {
-    setScenario({});
   }, []);
 
   const dispatch = useDispatch();
@@ -63,7 +61,10 @@ export default function Senario() {
       riskFreeRate: riskFreeRate,
       totalWealth: totalWealth
     };
-    setScenario({...scenario, ...newScenario});
+    
+    setScenario(prevScenario => (
+      {...prevScenario, ...newScenario}
+    ));
   }
 
   const saveScenarioDump = () => dispatch({
@@ -71,37 +72,46 @@ export default function Senario() {
     payload: scenario
   })
 
-  const log = () => {
-    handleScenario();
-    console.log(scenario)
-  }
-
   return (
     <div>
-      <h3 className='title'>scenario for {botname}</h3>
-      <div onChange={handleData}>
-        <InputChild label="data" type="success" disabled={true} defaultValue="DAILY"/>
-      </div>
-      <div onChange={handleStartDate}>
-        <InputChild label="start date" type="primary" disabled={false} defaultValue=""/>
-      </div>
-      <div onChange={handleEndDate}>
-        <InputChild label="end date" type="primary" disabled={false} defaultValue=""/>
-      </div>
-      <div onChange={handleTimeFrame}>
-        <InputChild label="time frame (days)" type="success" disabled={true} defaultValue="405.00"/>
-      </div>
-      <div onChange={handleCurrency}>
-        <InputChild label="currency" type="primary" disabled={false} defaultValue="USD"/>
-      </div>
-      <div onChange={handleRiskFreeRate}>
-        <InputChild label="risk free rate" type="primary" disabled={false} defaultValue="8%"/>
-      </div>
-      <div onChange={handleTotalWealth}>
-        <InputChild label="total wealth" type="primary" disabled={false} defaultValue="10000"/>
-      </div>
+      <div className="scenario-container">
+        <div className="left-col">
+          <div className="inputs-section">
+            <div onChange={handleData}>
+              <InputChild label="data" type="success" disabled={true} defaultValue="DAILY"/>
+            </div>
+            <div onChange={handleStartDate}>
+              <InputChild label="start date" type="primary" disabled={false} defaultValue=""/>
+            </div>
+            <div onChange={handleEndDate}>
+              <InputChild label="end date" type="primary" disabled={false} defaultValue=""/>
+            </div>
+            <div onChange={handleTimeFrame}>
+              <InputChild label="time frame (days)" type="success" disabled={true} defaultValue="405.00"/>
+            </div>
+            <div onChange={handleCurrency}>
+              <InputChild label="currency" type="primary" disabled={false} defaultValue=""/>
+            </div>
+            <div onChange={handleRiskFreeRate}>
+              <InputChild label="risk free rate" type="primary" disabled={false} defaultValue=""/>
+            </div>
+            <div onChange={handleTotalWealth}>
+              <InputChild label="total wealth" type="primary" disabled={false} defaultValue=""/>
+            </div>
+          </div>
+          <div className="button-section">
+            <Button className="button-add" onClick={handleScenario} variant="contained" color="inherit">
+              Save
+            </Button>
+            <Button className="button-clear" onClick={handleScenario} variant="contained" color="inherit">
+              Clear
+            </Button>
+          </div>
+        </div>
+        <div className="right-col">
 
-      <button onClick={log}>Save Scenario</button>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.app {
+  .container {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .inputs-accordion {
+      display: inline-block;
+      width: 48%;
+    }
+
+    .charts {
+      display: inline-block;
+      width: 48%;
+    }
+  }
+}

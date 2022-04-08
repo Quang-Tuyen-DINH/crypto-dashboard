@@ -6,7 +6,9 @@ export default function Results() {
   return (
     <div>
     <h3 className='title'>results (abstract)</h3>
+    <div>
         <InputChild label="NAV ROI 1Y" type="success" disabled={true} defaultValue=""/>
+    </div>
         <InputChild label="Share Ratio" type="success" disabled={true} defaultValue=""/>
         <InputChild label="IRR 1Y" type="success" disabled={true} defaultValue=""/>
         <InputChild label="MAX DD" type="success" disabled={true} defaultValue=""/>

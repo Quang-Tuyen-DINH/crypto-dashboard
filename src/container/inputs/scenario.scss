@@ -1,6 +1,30 @@
-.title {
-  text-transform: uppercase;
-  margin: 5px 0;
-  font-size: 25px;
-  color: #096da7;
+.scenario-container {
+  .left-col {
+    width: 50%;
+
+    .inputs-section {
+      display: block;
+    }
+  
+    .button-section {
+      display: block;
+      margin: 20px 0 0 0;
+
+      .button-add {
+        margin: 0 15px 0 0;
+        color: #ffffff;
+        background-color: #0069D9;
+      }
+
+      .button-clear {
+        margin: 0 15px 0 0;
+        color: #ffffff;
+        background-color: #DB3F35;
+      }
+    }
+  }
+
+  .right-col {
+    width: 50%;
+  }
 }

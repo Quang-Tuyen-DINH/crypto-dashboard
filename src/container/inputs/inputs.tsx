@@ -5,10 +5,14 @@ import Sell from "./sell";
 import Fundings from "./fundings";
 import Results from "./results";
 import "./inputs.scss";
+import ControlledTreeView from '../tree-view/tree-view';
 
 function Inputs() {
   return (
     <div className="container">
+      <div className="inputTreeView">
+        <ControlledTreeView />
+      </div>
       <div className="input scenario">
         <Senario />
       </div>
