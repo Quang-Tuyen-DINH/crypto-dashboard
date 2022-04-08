@@ -5,7 +5,6 @@ import "./sell.scss";
 export default function Sell() {
   return (
     <div>
-      <h3 className='title'>sell</h3>
       <div className='sell-container'>
         <div className='sell-col'>
           <div className='sub-title'>Trailing Stop Loss</div>

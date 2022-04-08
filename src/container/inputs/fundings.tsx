@@ -5,7 +5,6 @@ import "./fundings.scss";
 export default function Fundings() {
   return (
     <div>
-      <h3 className='title'>fundings</h3>
       <div className='fund-container'>
         <div className='fund-col'>
           <div className='sub-title'>Inital Investment</div>

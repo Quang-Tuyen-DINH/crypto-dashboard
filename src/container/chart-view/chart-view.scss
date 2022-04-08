@@ -1,0 +1,33 @@
+.charts-container {
+  // display: flex;
+  // justify-content: center;
+  // align-items: flex-start;
+  text-align: center;
+
+  .chart-full-width {
+    display: block;
+    width: 100%;
+    margin: 20px 0 20px 0;
+    text-align: center;
+
+    .chart-name {
+      margin: 10px 0 0 0;
+    }
+  }
+
+  .half-width-container {
+    display: flex;
+    justify-content: space-between;
+
+    .chart-half-width {
+      display: inline-block;
+      width: 50%;
+      margin: 20px 0 20px 0;
+      text-align: center;
+  
+      .chart-name {
+        margin: 10px 0 0 0;
+      }
+    }
+  }
+}

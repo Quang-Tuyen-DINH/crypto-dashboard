@@ -1,17 +1,23 @@
 .app {
-  .container {
+    .title {
+      display: block;
+      width: 100%;
+      margin: 50px 0 0 0;
+      padding: 0 0 0 50px;
+      font-size: 40px;
+    }
+
+  .app-container {
     padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
     .inputs-accordion {
-      display: inline-block;
       width: 48%;
     }
 
-    .charts {
-      display: inline-block;
+    .charts-view {
       width: 48%;
     }
   }

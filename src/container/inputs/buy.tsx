@@ -5,7 +5,6 @@ import "./buy.scss";
 export default function Buy() {
   return (
     <div>
-      <h3 className='title'>buy</h3>
       <div className='buy-container'>
         <div className='buy-col'>
           <div className='sub-title'>Launch Periodic</div>

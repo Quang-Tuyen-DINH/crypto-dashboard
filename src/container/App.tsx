@@ -7,6 +7,7 @@ import Buy from './inputs/buy';
 import Sell from './inputs/sell';
 import Fundings from './inputs/fundings';
 import Results from './inputs/results';
+import ChartView from './chart-view/chart-view';
 
 function App() {
   const inputList: any[] = [
@@ -33,12 +34,13 @@ function App() {
   ]
   return (
     <div className="app">
-      <div className="container">
+      <h2 className="title">Bonjour Mathieu</h2>
+      <div className="app-container">
         <div className="inputs-accordion">
           <AccordionView inputList={inputList} />
         </div>
-        <div className="charts">
-          <AccordionView inputList={inputList} />
+        <div className="charts-view">
+          <ChartView />
         </div>
       </div>
     </div>
