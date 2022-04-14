@@ -1,4 +1,36 @@
-.title {
-  text-transform: uppercase;
-  margin: 5px 0;
+.results-container {
+  .results-inputs-section {
+    display: flex;
+    width: 100%;
+
+    .results-col {
+      display: inline-block;
+      width: 50%;
+    
+      .results-sub-title {
+        margin: 15px 0 0 0;
+        height: 24px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .fund-buttons-section {
+    margin: 25px 0 0 0;
+
+    .fund-button-add {
+      margin: 0 15px 0 0;
+      width: 100px;
+      color: #ffffff;
+      background-color: #0069D9;
+    }
+  
+    .fund-button-clear {
+      margin: 0 15px 0 0;
+      width: 100px;
+      color: #ffffff;
+      background-color: #DB3F35;
+    }
+  }
 }

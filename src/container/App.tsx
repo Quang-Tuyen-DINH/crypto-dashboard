@@ -37,9 +37,11 @@ function App() {
       <h2 className="title">Bonjour Mathieu</h2>
       <div className="app-container">
         <div className="inputs-accordion">
+          <span className="accordion-sub-title">Input configurations</span>
           <AccordionView inputList={inputList} />
         </div>
         <div className="charts-view">
+          <span className="visuals-sub-title">Visuals</span>
           <ChartView />
         </div>
       </div>

@@ -1,30 +1,39 @@
 .scenario-container {
-  .left-col {
-    width: 50%;
+  .scenario-inputs-section {
+    display: flex;
+    width: 100%;
 
-    .inputs-section {
-      display: block;
-    }
-  
-    .button-section {
-      display: block;
-      margin: 20px 0 0 0;
-
-      .button-add {
-        margin: 0 15px 0 0;
-        color: #ffffff;
-        background-color: #0069D9;
-      }
-
-      .button-clear {
-        margin: 0 15px 0 0;
-        color: #ffffff;
-        background-color: #DB3F35;
-      }
+    .scenario-col {
+      display: inline-block;
+      width: 50%;
     }
   }
 
-  .right-col {
-    width: 50%;
+  .scenario-buttons-section {
+    margin: 25px 0 25px 0;
+
+    .scenario-button-add {
+      margin: 0 15px 0 0;
+      width: 100px;
+      color: #ffffff;
+      background-color: #0069D9;
+    }
+  
+    .scenario-button-clear {
+      margin: 0 15px 0 0;
+      width: 100px;
+      color: #ffffff;
+      background-color: #DB3F35;
+    }
+  }
+
+  .scenario-draft-section {
+    margin: 25px 0 15px 0;
+
+    .scenario-draft-title {
+      margin: 15px 0 0 0;
+      height: 24px;
+      font-weight: bold;
+    }
   }
 }

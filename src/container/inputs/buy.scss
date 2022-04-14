@@ -1,17 +1,36 @@
 .buy-container {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+  .buy-inputs-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 
-.buy-col {
-  display: inline-block;
-  width: 32%;
-}
+    .buy-col {
+      display: inline-block;
+      width: 32%;
+    
+      .buy-sub-title {
+        margin: 15px 0 0 0;
+        height: 24px;
+        font-weight: bold;
+      }
+    }
+  }
 
-.sub-title {
-  margin: 15px 0 0 0;
-  height: 24px;
-  font-weight: bold;
+  .buy-buttons-section {
+    margin: 25px 0 0 0;
+
+    .buy-button-add {
+      margin: 0 15px 0 0;
+      width: 100px;
+      color: #ffffff;
+      background-color: #0069D9;
+    }
+  
+    .buy-button-clear {
+      margin: 0 15px 0 0;
+      width: 100px;
+      color: #ffffff;
+      background-color: #DB3F35;
+    }
+  }
 }

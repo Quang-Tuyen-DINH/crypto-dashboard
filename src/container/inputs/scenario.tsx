@@ -65,6 +65,11 @@ export default function Scenario() {
     setScenario(prevScenario => (
       {...prevScenario, ...newScenario}
     ));
+    // saveScenarioDump();
+  }
+
+  const clearScenario = () => {
+    setScenario({})
   }
 
   const saveScenarioDump = () => dispatch({
@@ -75,8 +80,9 @@ export default function Scenario() {
   return (
     <div>
       <div className="scenario-container">
-        <div className="left-col">
-          <div className="inputs-section">
+        <div className="scenario-inputs-section">{JSON.stringify(scenario)}</div>
+        <div className="scenario-inputs-section">
+          <div className="scenario-col">
             <div onChange={handleData}>
               <InputChild label="data" type="success" disabled={true} defaultValue="DAILY"/>
             </div>
@@ -89,6 +95,8 @@ export default function Scenario() {
             <div onChange={handleTimeFrame}>
               <InputChild label="time frame (days)" type="success" disabled={true} defaultValue="405.00"/>
             </div>
+          </div>
+          <div className="scenario--col">
             <div onChange={handleCurrency}>
               <InputChild label="currency" type="primary" disabled={false} defaultValue=""/>
             </div>
@@ -99,17 +107,21 @@ export default function Scenario() {
               <InputChild label="total wealth" type="primary" disabled={false} defaultValue=""/>
             </div>
           </div>
-          <div className="button-section">
-            <Button className="button-add" onClick={handleScenario} variant="contained" color="inherit">
-              Save
-            </Button>
-            <Button className="button-clear" onClick={handleScenario} variant="contained" color="inherit">
-              Clear
-            </Button>
-          </div>
         </div>
-        <div className="right-col">
+        <div className="scenario-buttons-section">
+          <Button className="scenario-button-add" onClick={handleScenario} variant="contained" color="inherit">
+            Save
+          </Button>
+          <Button className="scenario-button-clear" onClick={clearScenario} variant="contained" color="inherit">
+            Clear
+          </Button>
+        </div>
+        <hr />
+        <div className="scenario-draft-section">
+          <div className='scenario-draft-title'>Drafts</div>
+          <div className="scenario-drafts">
 
+          </div>
         </div>
       </div>
     </div>
