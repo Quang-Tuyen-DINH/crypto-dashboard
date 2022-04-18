@@ -11,8 +11,8 @@ export default function AccordionView(
 
   return (
     <div>
-      {accordionList.map((input: any, index) => (
-          <AccordionChild key={index} title={input.title} component={input.component}/>
+      {accordionList.map((input: any) => (
+          <AccordionChild key={input.id} title={input.title} component={input.component}/>
         ))}
     </div>
   );

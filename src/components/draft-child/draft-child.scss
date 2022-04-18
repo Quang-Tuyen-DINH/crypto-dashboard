@@ -1,0 +1,29 @@
+.draftContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .draft-table{
+    display: block;
+    width: 100%;
+  }
+
+  .draft-buttons{
+    width: 100%;
+    margin: 15px 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+
+    .scenario-button-use {
+      width: 100px;
+      color: #ffffff;
+      background-color: #00d974;
+    }
+  
+    .scenario-button-remove {
+      width: 100px;
+      color: #ffffff;
+      background-color: #adadad;
+    }
+  }
+}

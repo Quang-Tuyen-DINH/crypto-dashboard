@@ -1,12 +1,19 @@
 import React from 'react';
 import "./scenario.scss";
-import InputChild from "../../components/input-child/input-child"
-import { useDispatch } from 'react-redux';
+import InputChild from "../../components/input-child/input-child";
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
+import State from '../../interfaces/state';
+import botM1 from '../../interfaces/botM1';
+import DraftChild from '../../components/draft-child/draft-child';
+// import useInputService from './useInputService';
 
 export default function Scenario() {
   React.useEffect(() => {
     fetchData();
+    if(scenarioDrafts.length > 0) {
+      setHasDrafts(true);
+    }
   }, []);
 
   const dispatch = useDispatch();
@@ -26,7 +33,9 @@ export default function Scenario() {
   const [currency, setCurrency] = React.useState("");
   const [riskFreeRate, setRiskFreeRate] = React.useState("");
   const [totalWealth, setTotalWealth] = React.useState("");
+  const [id, setId] = React.useState("");
   const [scenario, setScenario] = React.useState({});
+  const [hasDrafts, setHasDrafts] = React.useState(false);
 
   //Set form
   const handleData = (e: any) => {
@@ -50,9 +59,14 @@ export default function Scenario() {
   const handleTotalWealth = (e: any) => {
     setTotalWealth(e.target.value);
   };
+  const handleId = (e: any) => {
+    const initialName = "bot";
+    setId(initialName.concat(e.target.value));
+  };
 
   const handleScenario = () => {
-    let newScenario = {
+    let newScenario: botM1 = {
+      id: id,
       data: data,
       startDate: startDate,
       endDate: endDate,
@@ -62,25 +76,28 @@ export default function Scenario() {
       totalWealth: totalWealth
     };
     
-    setScenario(prevScenario => (
-      {...prevScenario, ...newScenario}
-    ));
-    // saveScenarioDump();
+    saveScenario(newScenario);
+    setHasDrafts(true);
   }
 
   const clearScenario = () => {
     setScenario({})
+    return null
   }
 
-  const saveScenarioDump = () => dispatch({
-    type: 'ADD_CFG_BOT_M',
-    payload: scenario
-  })
+  const saveScenario = (newScenario: botM1) => {
+    dispatch({
+      type: 'ADD_CFG_BOT_M1',
+      payload: newScenario
+    })
+  }
+
+  const scenarioDrafts = useSelector((state: State) => state.scenarioBotM1);
 
   return (
     <div>
       <div className="scenario-container">
-        <div className="scenario-inputs-section">{JSON.stringify(scenario)}</div>
+        <div>{JSON.stringify(botname)}</div>
         <div className="scenario-inputs-section">
           <div className="scenario-col">
             <div onChange={handleData}>
@@ -106,6 +123,9 @@ export default function Scenario() {
             <div onChange={handleTotalWealth}>
               <InputChild label="total wealth" type="primary" disabled={false} defaultValue=""/>
             </div>
+            <div onChange={handleId}>
+              <InputChild label="id" type="primary" disabled={false} defaultValue=""/>
+            </div>
           </div>
         </div>
         <div className="scenario-buttons-section">
@@ -119,9 +139,15 @@ export default function Scenario() {
         <hr />
         <div className="scenario-draft-section">
           <div className='scenario-draft-title'>Drafts</div>
-          <div className="scenario-drafts">
-
-          </div>
+            {hasDrafts && (
+              <div className="scenario-drafts-container">
+                {scenarioDrafts.map((scenario: botM1) => (
+                  <div className="scenario-draft">
+                    <DraftChild key={`key-${scenario.id}`} draft={scenario}/>
+                  </div>
+                ))}
+              </div>
+            )}
         </div>
       </div>
     </div>

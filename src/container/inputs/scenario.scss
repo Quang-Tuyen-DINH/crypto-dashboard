@@ -11,6 +11,7 @@
 
   .scenario-buttons-section {
     margin: 25px 0 25px 0;
+    width: 100%;
 
     .scenario-button-add {
       margin: 0 15px 0 0;
@@ -31,9 +32,21 @@
     margin: 25px 0 15px 0;
 
     .scenario-draft-title {
-      margin: 15px 0 0 0;
+      margin: 15px 0 15px 0;
       height: 24px;
       font-weight: bold;
+    }
+
+    .scenario-drafts-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .scenario-draft {
+        margin: 0 10px 15px 0;
+        display: inline-block;
+        width: 30%;
+      }
     }
   }
 }

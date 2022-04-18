@@ -12,22 +12,27 @@ import ChartView from './chart-view/chart-view';
 function App() {
   const inputList: any[] = [
     {
+      id: 'accord1',
       title: 'scenario',
       component: <Scenario />
     },
     {
+      id: 'accord2',
       title: 'buy',
       component: <Buy />
     },
     {
+      id: 'accord3',
       title: 'sell',
       component: <Sell />
     },
     {
+      id: 'accord4',
       title: 'fundings',
       component: <Fundings />
     },
     {
+      id: 'accord5',
       title: 'results',
       component: <Results />
     },
